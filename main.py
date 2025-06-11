@@ -38,6 +38,7 @@ def main():
     df = processing.read_csv(selected_csv)
     df = processing.add_column_to_csv(df, new_column)
     df = processing.process_csv_with_gemini(df, new_column, transformation_prompt)
+    processing.save_csv(df, selected_csv)
 
     print(f"Transformation successful! The new column '{new_column}' has been added to '{selected_csv}' according to your transformation prompt!")
 
